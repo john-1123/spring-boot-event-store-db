@@ -31,7 +31,7 @@ class AccountsCommandController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    ResponseEntity<AccountDetails> open(@Valid @RequestBody AccountsRequests.Open request) throws URISyntaxException {
+    ResponseEntity<Void> open(@Valid @RequestBody AccountsRequests.Open request) throws URISyntaxException {
         var accountId = UUID.randomUUID();
 
         var result = store.handle(

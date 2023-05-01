@@ -4,7 +4,6 @@ import com.example.springbooteventstoredb.accounts.Account;
 import com.example.springbooteventstoredb.accounts.AccountCommand;
 import com.example.springbooteventstoredb.accounts.AccountCommand.*;
 import com.example.springbooteventstoredb.accounts.AccountEvent;
-import com.example.springbooteventstoredb.accounts.gettingbyid.AccountDetails;
 import com.example.springbooteventstoredb.api.requests.AccountsRequests;
 import com.example.springbooteventstoredb.core.entities.CommandHandler;
 import jakarta.validation.Valid;

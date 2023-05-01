@@ -15,7 +15,7 @@ class AccountConfig {
 
     @Bean
     @ApplicationScope
-    CommandHandler<Account, AccountCommand, AccountEvent> shoppingCartStore(
+    CommandHandler<Account, AccountCommand, AccountEvent> accountStore(
             EventStoreDBClient eventStore,
             AccountDecider decider
     ) {

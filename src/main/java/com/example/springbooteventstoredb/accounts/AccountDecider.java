@@ -24,12 +24,14 @@ public class AccountDecider {
     }
 
     private MoneySaved handle(Account account, SaveMoney command) {
+        if (!(account instanceof Opened))
+            throw new IllegalStateException("Saving Money to Account in '%s' status is not allowed.".formatted(account.getClass().getName()));
         return new MoneySaved(command.id(), command.name(), command.balance());
     }
 
     private AccountClosed handle(Account account, CloseAccount command) {
         if (!(account instanceof Opened))
-            throw new IllegalStateException("Canceling Account in '%s' status is not allowed.".formatted(account.getClass().getName()));
+            throw new IllegalStateException("Closing Account in '%s' status is not allowed.".formatted(account.getClass().getName()));
         return new AccountClosed(command.id());
     }
 }

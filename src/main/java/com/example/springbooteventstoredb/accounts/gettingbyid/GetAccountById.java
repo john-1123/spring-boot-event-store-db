@@ -25,7 +25,7 @@ public record GetAccountById(UUID id, @Null ETag eTag) {
                     : repository.findByIdAndNeverVersion(query.id(), query.eTag().toLong());
 
             if (result.isEmpty()) {
-                throw new EntityNotFoundException("Shopping cart not found");
+                throw new EntityNotFoundException("Account not found");
             }
 
             return result.get();
